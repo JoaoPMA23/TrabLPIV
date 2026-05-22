@@ -1,12 +1,11 @@
 <?php
 require_once __DIR__ . '/../databases/database.php';
 
-class Convidado extends Database {
-    private $tableName = "convidados";
+class TipoPublicacao extends Database {
+    private $tableName = "tipo_publicacao";
 
     public $id;
     public $nome;
-    public $email;
 
     public function __construct() {
         $this->conn = $this->getConnection();
@@ -28,23 +27,17 @@ class Convidado extends Database {
     }
 
     public function criar() {
-        $query = "INSERT INTO " . $this->tableName . " SET nome=:nome, email=:email";
+        $query = "INSERT INTO " . $this->tableName . " SET nome=:nome";
         $stmt = $this->conn->prepare($query);
-        
         $stmt->bindParam(":nome", $this->nome);
-        $stmt->bindParam(":email", $this->email);
-        
         return $stmt->execute();
     }
 
     public function atualizar() {
-        $query = "UPDATE " . $this->tableName . " SET nome=:nome, email=:email WHERE id=:id";
+        $query = "UPDATE " . $this->tableName . " SET nome=:nome WHERE id=:id";
         $stmt = $this->conn->prepare($query);
-        
         $stmt->bindParam(":nome", $this->nome);
-        $stmt->bindParam(":email", $this->email);
         $stmt->bindParam(":id", $this->id);
-        
         return $stmt->execute();
     }
 

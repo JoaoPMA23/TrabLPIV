@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-color: #fafafa;
+    --surface-color: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --accent-color: #1a1a1a; /* Dark minimalist accent */
+    --accent-hover: #404040;
+    --danger-color: #d93025;
+    --danger-hover: #b3261e;
+    --success-color: #188038;
+    --success-hover: #13662c;
+    --border-color: #eaeaea;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+    --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
+header {
+    background-color: var(--surface-color);
+    padding: 24px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text-primary);
+}
+
+nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-left: 32px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+hr {
+    display: none;
+}
+
+/* Banner */
+.banner {
+    background-color: var(--surface-color);
+    padding: 100px 5%;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.banner-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+}
+
+.banner-content p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+/* Main Container */
+.container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 5%;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+}
+
+/* Buttons */
+.btn-add {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: var(--transition);
+    display: inline-block;
+    margin-bottom: 40px;
+    border: 1px solid var(--accent-color);
+}
+
+.btn-add:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+}
+
+/* Cards Grid */
+.books {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.card {
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+    background-color: #f1f1f1;
+}
+
+.card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+
+.rating {
+    font-size: 14px;
+    color: #f5b041;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.description {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+.description strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.description small {
+    display: block;
+    margin-top: 8px;
+    color: var(--text-secondary);
+}
+
+/* Actions in Card */
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.actions a {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-edit {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-edit:hover {
+    border-color: var(--text-primary);
+    background-color: var(--surface-color);
+}
+
+.btn-delete {
+    background-color: transparent;
+    color: var(--danger-color);
+    border: 1px solid #f8d7da;
+}
+
+.btn-delete:hover {
+    background-color: var(--danger-color);
+    color: white;
+    border-color: var(--danger-color);
+}
+
+/* Forms */
+.form-container {
+    background: var(--surface-color);
+    padding: 48px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    background-color: var(--bg-color);
+    transition: var(--transition);
+    box-sizing: border-box;
+    color: var(--text-primary);
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--text-primary);
+    background-color: var(--surface-color);
+}
+
+.btn-submit {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 16px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: var(--transition);
+    margin-top: 16px;
+}
+
+.btn-submit:hover {
+    background-color: var(--accent-hover);
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 32px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.back-link:hover {
+    color: var(--text-primary);
+}
