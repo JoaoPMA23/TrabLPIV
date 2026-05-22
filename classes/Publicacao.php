@@ -93,7 +93,7 @@ class Publicacao extends Database {
     }
 
     /**
-     * 9.3 Atualização
+     * 9.3 Atualizar
      */
     public function atualizar() {
         $query = "UPDATE " . $this->tableName . "
@@ -120,7 +120,7 @@ class Publicacao extends Database {
     }
 
     /**
-     * 9.4 Deleção
+     * 9.4 Deletar
      */
     public function deletar() {
         $query = "DELETE FROM " . $this->tableName . " WHERE id = ?";
